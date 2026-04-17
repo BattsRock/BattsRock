@@ -440,114 +440,122 @@ footer{
   color: rgba(255,255,255,.75);
 }
 
-@media (max-width: 940px){
-  .hero, .grid3, .grid2, .kpiRow{ grid-template-columns:1fr; }
-  nav ul{ display:none; }
-  .hamburger{ display:inline-flex; align-items:center; justify-content:center; }
-  .hero-logo{ width:min(260px, 74%); }
-  .visual{ min-height:auto; }
-}
 
-@media (prefers-reduced-motion: reduce){
-  * { transition: none !important; scroll-behavior: auto !important; }
-  .card:hover, .btn:hover { transform: none !important; }
-}
 
 @media (max-width: 940px){
-  .container{ width:min(var(--max), calc(100% - 28px)); }
-  main{ padding:38px 0 24px; }
-  .hero, .grid3, .grid2, .kpiRow{ grid-template-columns:1fr; }
-  .nav{
-    align-items:flex-start;
-    gap:12px;
+  .hero,
+  .grid3,
+  .grid2,
+  .kpiRow{
+    grid-template-columns:1fr;
   }
-  nav ul{ display:none; }
-  .header-actions{
-    width:100%;
-    justify-content:flex-end;
+
+  nav ul{
+    display:none;
   }
-  .hamburger{ display:inline-flex; align-items:center; justify-content:center; }
+
+  .hamburger{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
   .visual{
     min-height:auto;
-    padding:18px;
   }
-  .visualTop,
-  .visualFoot,
-  .sectionHead,
-  .footerRow,
+
+  .ctaBand,
   .contact-wrap,
-  .ctaBand{
+  .footerRow,
+  .sectionHead,
+  .visualTop{
     flex-direction:column;
     align-items:flex-start;
   }
-  .cta-actions,
-  .contact-actions,
-  .footerLinks,
-  .mobile-links{
-    width:100%;
-  }
-  .contact-actions .btn,
-  .cta-actions .btn,
-  .mobile-links .btn{
-    width:100%;
+
+  .hero-logo{
+    width:min(260px, 74%);
+    margin-inline:auto;
   }
 }
 
 @media (max-width: 640px){
-  .container{ width:min(var(--max), calc(100% - 20px)); }
-  header{ position:sticky; }
-  .nav{ padding:12px 0; }
-  .brand{ gap:.6rem; }
+  .container{
+    width:min(var(--max), calc(100% - 24px));
+  }
+
+  .nav{
+    padding:12px 0;
+  }
+
   .header-actions{
     gap:8px;
-    justify-content:space-between;
   }
+
   .lang-switcher{
-    order:3;
-    width:100%;
-    justify-content:flex-start;
+    flex-wrap:wrap;
   }
-  .btn{
-    padding:12px 14px;
-  }
+
   h1{
-    font-size: clamp(1.9rem, 9vw, 2.7rem);
-    line-height:1.06;
+    font-size: clamp(1.9rem, 8vw, 2.7rem);
   }
+
   h2{
-    font-size: clamp(1.35rem, 7vw, 1.8rem);
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
   }
-  .lead,
-  .subhead,
-  .card p,
-  .glassCard p{
-    font-size: .98rem;
-  }
+
   .heroActions,
-  .miniRow,
-  .footerLinks{
+  .cta-actions,
+  .contact-actions,
+  .mobile-links{
     width:100%;
   }
+
   .heroActions .btn,
   .cta-actions .btn,
-  .footerLinks a{
+  .contact-actions .btn,
+  .mobile-links .btn{
     width:100%;
     justify-content:center;
   }
-  .kpi{
-    padding:12px;
-  }
+
   .card,
   .glassCard,
   .ctaBand,
-  .contact-card{
+  .contact-card,
+  .visual{
     padding:16px;
   }
-  .phone-inline{
-    display:block;
-    margin:8px 0 0;
+
+  .hero-logo-wrap{
+    padding:6px 0 0;
+  }
+
+  .hero-logo{
+    width:min(220px, 72vw);
+  }
+
+  .brand-logo,
+  .footer-logo-image{
+    width:32px;
+    height:32px;
+  }
+
+  .footerRow,
+  .footerLinks,
+  .footer-brand{
+    justify-content:center;
+    text-align:center;
+    width:100%;
+  }
+
+  .fine{
+    margin:10px auto 0;
+    text-align:center;
   }
 }
+
+
 
 /* Center section headings like Services / Contact */
 .sectionHead{
