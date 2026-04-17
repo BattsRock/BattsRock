@@ -421,7 +421,13 @@ footer{
   flex-wrap:wrap;
 }
 
-.footer-brand{ display:flex; align-items:center; gap:.7rem; }
+/*.footer-brand{ display:flex; align-items:center; gap:.7rem; }*/
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  padding-top:12px;
+}
 .footer-logo-image{ width:30px; height:30px; object-fit:contain; }
 .fine{ font-size:.9rem; line-height:1.6; max-width:80ch; margin-top:10px; }
 
