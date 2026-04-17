@@ -356,6 +356,7 @@ h2{ margin:0; font-size: clamp(1.45rem, 2.2vw, 2.1rem); letter-spacing:.2px; }
   margin-bottom:12px;
 }
 
+.card h3{ margin:0 0 8px; font-size:1.05rem; }
 .card h3{ margin:12px 0 8px; font-size:1.05rem; }
 .card p{ margin:0; color:var(--muted); line-height:1.6; }
 
@@ -457,100 +458,7 @@ footer{
 }
 
 @media (max-width: 940px){
-  .container{ width:min(var(--max), calc(100% - 28px)); }
-  main{ padding:38px 0 24px; }
   .hero, .grid3, .grid2, .kpiRow{ grid-template-columns:1fr; }
-  .nav{
-    align-items:flex-start;
-    gap:12px;
-  }
-  nav ul{ display:none; }
-  .header-actions{
-    width:100%;
-    justify-content:flex-end;
-  }
-  .hamburger{ display:inline-flex; align-items:center; justify-content:center; }
-  .visual{
-    min-height:auto;
-    padding:18px;
-  }
-  .visualTop,
-  .visualFoot,
-  .sectionHead,
-  .footerRow,
-  .contact-wrap,
-  .ctaBand{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-  .cta-actions,
-  .contact-actions,
-  .footerLinks,
-  .mobile-links{
-    width:100%;
-  }
-  .contact-actions .btn,
-  .cta-actions .btn,
-  .mobile-links .btn{
-    width:100%;
-  }
-}
-
-@media (max-width: 640px){
-  .container{ width:min(var(--max), calc(100% - 20px)); }
-  header{ position:sticky; }
-  .nav{ padding:12px 0; }
-  .brand{ gap:.6rem; }
-  .header-actions{
-    gap:8px;
-    justify-content:space-between;
-  }
-  .lang-switcher{
-    order:3;
-    width:100%;
-    justify-content:flex-start;
-  }
-  .btn{
-    padding:12px 14px;
-  }
-  h1{
-    font-size: clamp(1.9rem, 9vw, 2.7rem);
-    line-height:1.06;
-  }
-  h2{
-    font-size: clamp(1.35rem, 7vw, 1.8rem);
-  }
-  .lead,
-  .subhead,
-  .card p,
-  .glassCard p{
-    font-size: .98rem;
-  }
-  .heroActions,
-  .miniRow,
-  .footerLinks{
-    width:100%;
-  }
-  .heroActions .btn,
-  .cta-actions .btn,
-  .footerLinks a{
-    width:100%;
-    justify-content:center;
-  }
-  .kpi{
-    padding:12px;
-  }
-  .card,
-  .glassCard,
-  .ctaBand,
-  .contact-card{
-    padding:16px;
-  }
-  .phone-inline{
-    display:block;
-    margin:8px 0 0;
-  }
-}
   nav ul{ display:none; }
   .hamburger{ display:inline-flex; align-items:center; justify-content:center; }
 }
@@ -558,4 +466,83 @@ footer{
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; scroll-behavior: auto !important; }
   .card:hover, .btn:hover { transform: none !important; }
+}
+
+.brand-logo{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  filter: drop-shadow(0 8px 18px rgba(214,177,94,.18));
+}
+
+.hero-logo-pair{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  padding:12px 0 2px;
+  flex-wrap:wrap;
+}
+
+.hero-logo{
+  display:block;
+  object-fit:contain;
+}
+
+.hero-logo-battsrock{
+  width:min(180px, 38%);
+  filter: drop-shadow(0 12px 30px rgba(214,177,94,.10));
+}
+
+.hero-logo-zentra{
+  width:min(240px, 52%);
+  filter: drop-shadow(0 16px 36px rgba(214,177,94,.14));
+}
+
+.zentra-logo-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.zentra-feature{
+  margin-top:18px;
+}
+
+.zentra-feature-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.zentra-feature-actions{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.feature-zentra-logo{
+  width:140px;
+  object-fit:contain;
+  filter: drop-shadow(0 12px 30px rgba(214,177,94,.14));
+}
+
+.footer-logo-image{
+  width:30px;
+  height:30px;
+  object-fit:contain;
+}
+
+.zentra-link{
+  text-decoration:none;
+}
+
+@media (max-width: 940px){
+  .hero-logo-battsrock,
+  .hero-logo-zentra{
+    width:min(220px, 70%);
+  }
 }
