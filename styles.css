@@ -365,6 +365,10 @@ h2{ margin:0; font-size: clamp(1.45rem, 2.2vw, 2.1rem); letter-spacing:.2px; }
 .grid3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:18px; }
 .grid2{ display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; margin-top:18px; }
 
+.zentra-feature{
+  margin-top:18px;
+}
+
 .card{
   border-radius: var(--radius2);
   border:1px solid rgba(255,255,255,.12);
