@@ -465,3 +465,82 @@ footer{
   * { transition: none !important; scroll-behavior: auto !important; }
   .card:hover, .btn:hover { transform: none !important; }
 }
+
+.brand-logo{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  filter: drop-shadow(0 8px 18px rgba(214,177,94,.18));
+}
+
+.hero-logo-pair{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  padding:12px 0 2px;
+  flex-wrap:wrap;
+}
+
+.hero-logo{
+  display:block;
+  object-fit:contain;
+}
+
+.hero-logo-battsrock{
+  width:min(180px, 38%);
+  filter: drop-shadow(0 12px 30px rgba(214,177,94,.10));
+}
+
+.hero-logo-zentra{
+  width:min(240px, 52%);
+  filter: drop-shadow(0 16px 36px rgba(214,177,94,.14));
+}
+
+.zentra-logo-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.zentra-feature{
+  margin-top:18px;
+}
+
+.zentra-feature-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.zentra-feature-actions{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.feature-zentra-logo{
+  width:140px;
+  object-fit:contain;
+  filter: drop-shadow(0 12px 30px rgba(214,177,94,.14));
+}
+
+.footer-logo-image{
+  width:30px;
+  height:30px;
+  object-fit:contain;
+}
+
+.zentra-link{
+  text-decoration:none;
+}
+
+@media (max-width: 940px){
+  .hero-logo-battsrock,
+  .hero-logo-zentra{
+    width:min(220px, 70%);
+  }
+}
