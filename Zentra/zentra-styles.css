@@ -548,3 +548,41 @@ footer{
     margin:8px 0 0;
   }
 }
+
+/* Center section headings like Services / Contact */
+.sectionHead{
+  text-align:center;
+  justify-content:center;
+}
+
+.sectionHead > div{
+  width:100%;
+}
+
+.sectionHead h2,
+.sectionHead .subhead{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Center footer content */
+.footerRow{
+  justify-content:center;
+  text-align:center;
+}
+
+.footer-brand{
+  justify-content:center;
+  width:100%;
+}
+
+.fine{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+.footerLinks{
+  justify-content:center;
+  width:100%;
+}
