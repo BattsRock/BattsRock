@@ -555,7 +555,36 @@ footer{
   }
 }
 
+@media (max-width: 640px){
+  .footerRow{
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
 
+  .footer-brand{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .fine{
+    width:100%;
+    max-width:none;
+    margin:10px auto 16px;
+    text-align:center;
+  }
+
+  .footerLinks{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .footerLinks a{
+    text-align:center;
+  }
+}
 
 /* Center section headings like Services / Contact */
 .sectionHead{
