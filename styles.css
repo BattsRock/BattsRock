@@ -551,6 +551,35 @@ footer{
   }
 }
 
+@media (max-width: 640px){
+  footer .footerRow{
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+
+  footer .footer-brand{
+    width:100%;
+    justify-content:center;
+  }
+
+  footer .fine{
+    width:100%;
+    max-width:none;
+    margin:10px auto 16px;
+    text-align:center;
+  }
+
+  footer .footerLinks{
+    width:100%;
+    justify-content:center;
+  }
+
+  footer .footerLinks a{
+    text-align:center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; scroll-behavior: auto !important; }
   .card:hover, .btn:hover { transform: none !important; }
