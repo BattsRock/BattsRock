@@ -1,1 +1,1385 @@
+<!doctype html>
 
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="BattsRock — Rum distribution coming soon in Costa Rica." />
+
+  <title>BattsRock — Coming Soon</title>
+
+
+
+  <style>
+
+    :root{
+
+      --bg:#07070a;
+
+      --bg2:#0b0b10;
+
+      --text:rgba(255,255,255,.92);
+
+      --muted:rgba(255,255,255,.72);
+
+      --faint:rgba(255,255,255,.55);
+
+      --line:rgba(255,255,255,.14);
+
+      --card:rgba(255,255,255,.06);
+
+      --card2:rgba(255,255,255,.10);
+
+      --brand:#d6b15e;
+
+      --brand2:#b98d2f;
+
+      --shadow:0 18px 55px rgba(0,0,0,.55);
+
+      --shadow2:0 10px 30px rgba(0,0,0,.45);
+
+      --radius:22px;
+
+      --radius2:16px;
+
+      --max:1120px;
+
+    }
+
+
+
+    *{ box-sizing:border-box; }
+
+    html, body{ height:100%; }
+
+    body{
+
+      margin:0;
+
+      color:var(--text);
+
+      background:
+
+        radial-gradient(1200px 800px at 20% 10%, rgba(214,177,94,.16), transparent 55%),
+
+        radial-gradient(900px 700px at 85% 25%, rgba(185,141,47,.12), transparent 58%),
+
+        radial-gradient(900px 900px at 50% 120%, rgba(255,255,255,.06), transparent 55%),
+
+        linear-gradient(180deg, var(--bg), var(--bg2));
+
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+
+      letter-spacing:.2px;
+
+      overflow-x:hidden;
+
+    }
+
+
+
+    a{ color:inherit; text-decoration:none; }
+
+    .container{ width:min(var(--max), calc(100% - 48px)); margin-inline:auto; }
+
+
+
+    /* Header */
+
+    header{
+
+      position:sticky; top:0; z-index:20;
+
+      backdrop-filter: blur(16px);
+
+      -webkit-backdrop-filter: blur(16px);
+
+      background: rgba(7,7,10,.58);
+
+      border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .nav{
+
+      display:flex; align-items:center; justify-content:space-between;
+
+      padding:16px 0;
+
+      gap:16px;
+
+    }
+
+    .brand{
+
+      display:flex; align-items:center; gap:.75rem;
+
+      font-weight:800; letter-spacing:.7px;
+
+    }
+
+    .logo{
+
+      width:36px; height:36px; border-radius:12px;
+
+      background: linear-gradient(145deg, rgba(214,177,94,.95), rgba(185,141,47,.55));
+
+      box-shadow: 0 12px 28px rgba(214,177,94,.18);
+
+      position:relative; overflow:hidden;
+
+    }
+
+    .logo:after{
+
+      content:""; position:absolute; inset:-40%;
+
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.55), transparent 50%);
+
+      transform: rotate(20deg);
+
+    }
+
+    nav ul{
+
+      display:flex; align-items:center; gap:18px;
+
+      list-style:none; padding:0; margin:0;
+
+      color:var(--muted);
+
+      font-size:.98rem;
+
+    }
+
+    nav a{
+
+      padding:10px 10px; border-radius:999px;
+
+      transition:.18s ease;
+
+    }
+
+    nav a:hover{
+
+      color:var(--text);
+
+      background: rgba(255,255,255,.05);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      padding:9px 9px;
+
+    }
+
+
+
+    .btn{
+
+      display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+
+      padding:11px 14px;
+
+      border-radius:999px;
+
+      border:1px solid rgba(255,255,255,.14);
+
+      background: rgba(255,255,255,.05);
+
+      color: var(--text);
+
+      transition:.18s ease;
+
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+
+      white-space:nowrap;
+
+    }
+
+    .btn:hover{
+
+      transform: translateY(-1px);
+
+      border-color: rgba(255,255,255,.22);
+
+      background: rgba(255,255,255,.07);
+
+    }
+
+    .btn.primary{
+
+      border: 1px solid rgba(214,177,94,.35);
+
+      background: linear-gradient(135deg, rgba(214,177,94,.95), rgba(185,141,47,.72));
+
+      color:#140f04;
+
+      font-weight:800;
+
+      box-shadow: 0 18px 45px rgba(214,177,94,.16);
+
+    }
+
+    .btn.primary:hover{ filter: brightness(1.02); }
+
+
+
+    .hamburger{
+
+      display:none;
+
+      width:44px; height:44px;
+
+      border-radius:999px;
+
+      border:1px solid rgba(255,255,255,.14);
+
+      background: rgba(255,255,255,.05);
+
+      color: var(--text);
+
+    }
+
+
+
+    /* Pills */
+
+    .pill{
+
+      display:inline-flex; align-items:center; gap:.5rem;
+
+      padding:.45rem .8rem;
+
+      border:1px solid var(--line);
+
+      background: rgba(255,255,255,.04);
+
+      border-radius:999px;
+
+      backdrop-filter: blur(10px);
+
+      -webkit-backdrop-filter: blur(10px);
+
+      font-size:.92rem;
+
+      color: var(--muted);
+
+    }
+
+    .dot{
+
+      width:9px; height:9px; border-radius:99px;
+
+      background: radial-gradient(circle at 30% 30%, #fff, var(--brand));
+
+      box-shadow: 0 0 0 3px rgba(214,177,94,.12);
+
+    }
+
+
+
+    /* Hero */
+
+    main{ padding: 58px 0 30px; }
+
+    .hero{
+
+      display:grid;
+
+      grid-template-columns: 1.05fr .95fr;
+
+      gap: 22px;
+
+      align-items: center;
+
+    }
+
+    h1{
+
+      font-size: clamp(2.1rem, 3.6vw, 3.8rem);
+
+      line-height:1.06;
+
+      margin: 14px 0 14px;
+
+      letter-spacing:.2px;
+
+    }
+
+    .lead{
+
+      font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+
+      line-height:1.6;
+
+      color: var(--muted);
+
+      max-width: 58ch;
+
+      margin: 0;
+
+    }
+
+    .heroActions{
+
+      display:flex; gap:12px; flex-wrap:wrap;
+
+      margin-top: 18px;
+
+    }
+
+    .miniRow{
+
+      display:flex; gap: 14px; flex-wrap:wrap;
+
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      font-size: .95rem;
+
+    }
+
+    .chip{
+
+      border:1px solid rgba(255,255,255,.12);
+
+      background: rgba(255,255,255,.04);
+
+      padding:.45rem .65rem;
+
+      border-radius:999px;
+
+    }
+
+
+
+    /* Visual card */
+
+    .visual{
+
+      border-radius: var(--radius);
+
+      border:1px solid rgba(255,255,255,.12);
+
+      background:
+
+        radial-gradient(1000px 500px at 40% 0%, rgba(214,177,94,.20), transparent 60%),
+
+        radial-gradient(700px 500px at 85% 30%, rgba(255,255,255,.08), transparent 55%),
+
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+
+      box-shadow: var(--shadow);
+
+      overflow:hidden;
+
+      position:relative;
+
+      min-height: 380px;
+
+      padding: 22px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:space-between;
+
+    }
+
+    .visualTop{
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      gap: 12px;
+
+      flex-wrap:wrap;
+
+    }
+
+    .badge{
+
+      display:inline-flex; align-items:center; gap:.5rem;
+
+      padding:.45rem .75rem;
+
+      border-radius:999px;
+
+      background: rgba(0,0,0,.35);
+
+      border: 1px solid rgba(255,255,255,.14);
+
+      color: rgba(255,255,255,.86);
+
+      font-size:.92rem;
+
+      backdrop-filter: blur(10px);
+
+      -webkit-backdrop-filter: blur(10px);
+
+    }
+
+    .badge svg{ opacity:.95; }
+
+
+
+    .glassCard{
+
+      border-radius: var(--radius2);
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      background: rgba(255,255,255,.05);
+
+      backdrop-filter: blur(14px);
+
+      -webkit-backdrop-filter: blur(14px);
+
+      padding: 16px;
+
+      box-shadow: var(--shadow2);
+
+    }
+
+    .glassCard h3{
+
+      margin:0 0 6px;
+
+      font-size: 1.1rem;
+
+      letter-spacing:.2px;
+
+    }
+
+    .glassCard p{
+
+      margin:0;
+
+      color: var(--muted);
+
+      line-height:1.6;
+
+    }
+
+
+
+    /* Sections */
+
+    section{ padding: 44px 0; }
+
+    .sectionHead{
+
+      display:flex; align-items:flex-end; justify-content:space-between;
+
+      gap: 18px;
+
+      margin-bottom: 18px;
+
+    }
+
+    h2{
+
+      margin:0;
+
+      font-size: clamp(1.45rem, 2.2vw, 2.1rem);
+
+      letter-spacing:.2px;
+
+    }
+
+    .subhead{
+
+      margin:0;
+
+      color: var(--muted);
+
+      max-width: 70ch;
+
+      line-height: 1.6;
+
+    }
+
+
+
+    .grid3{
+
+      display:grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 16px;
+
+      margin-top: 18px;
+
+    }
+
+    .card{
+
+      border-radius: var(--radius2);
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      background: rgba(255,255,255,.04);
+
+      box-shadow: 0 10px 30px rgba(0,0,0,.30);
+
+      padding: 18px;
+
+      backdrop-filter: blur(12px);
+
+      -webkit-backdrop-filter: blur(12px);
+
+      transition: .18s ease;
+
+    }
+
+    .card:hover{
+
+      transform: translateY(-2px);
+
+      background: rgba(255,255,255,.05);
+
+      border-color: rgba(255,255,255,.18);
+
+    }
+
+    .icon{
+
+      width:42px; height:42px;
+
+      border-radius:14px;
+
+      display:grid; place-items:center;
+
+      background: rgba(214,177,94,.12);
+
+      border: 1px solid rgba(214,177,94,.22);
+
+      margin-bottom: 12px;
+
+    }
+
+    .card h3{ margin: 0 0 8px; font-size: 1.05rem; }
+
+    .card p{ margin: 0; color: var(--muted); line-height: 1.6; }
+
+
+
+    /* CTA band */
+
+    .ctaBand{
+
+      margin-top: 10px;
+
+      border-radius: var(--radius);
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      background:
+
+        radial-gradient(1000px 520px at 30% 0%, rgba(214,177,94,.22), transparent 60%),
+
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+
+      box-shadow: var(--shadow);
+
+      padding: 24px;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      gap: 16px;
+
+      flex-wrap:wrap;
+
+    }
+
+    .ctaBand p{ margin: 6px 0 0; color: var(--muted); line-height:1.6; }
+
+    .ctaBand h3{ margin: 0; font-size: 1.35rem; }
+
+
+
+    /* Footer */
+
+    footer{
+
+      padding: 28px 0 40px;
+
+      border-top: 1px solid rgba(255,255,255,.08);
+
+      color: var(--faint);
+
+    }
+
+    .footerRow{
+
+      display:flex; align-items:flex-start; justify-content:space-between;
+
+      gap: 18px;
+
+      flex-wrap: wrap;
+
+    }
+
+    .fine{
+
+      font-size: .9rem;
+
+      line-height: 1.6;
+
+      max-width: 80ch;
+
+    }
+
+    .footerLinks{
+
+      display:flex; gap: 12px; flex-wrap:wrap;
+
+      align-items:center;
+
+    }
+
+    .footerLinks a{
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      background: rgba(255,255,255,.04);
+
+      padding: .45rem .65rem;
+
+      border-radius: 999px;
+
+      color: rgba(255,255,255,.75);
+
+    }
+
+    .footerLinks a:hover{
+
+      border-color: rgba(255,255,255,.22);
+
+      color: rgba(255,255,255,.9);
+
+    }
+
+
+
+    /* Age Gate Modal */
+
+    .modalBackdrop{
+
+      position: fixed; inset:0;
+
+      background: rgba(0,0,0,.68);
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      padding: 18px;
+
+      z-index: 999;
+
+    }
+
+    .modal{
+
+      width:min(560px, 100%);
+
+      border-radius: var(--radius);
+
+      border: 1px solid rgba(255,255,255,.14);
+
+      background:
+
+        radial-gradient(900px 520px at 20% 0%, rgba(214,177,94,.22), transparent 60%),
+
+        linear-gradient(180deg, rgba(18,18,24,.92), rgba(8,8,12,.92));
+
+      box-shadow: var(--shadow);
+
+      padding: 22px;
+
+      backdrop-filter: blur(14px);
+
+      -webkit-backdrop-filter: blur(14px);
+
+    }
+
+    .modal h3{ margin: 0 0 8px; font-size: 1.35rem; }
+
+    .modal p{ margin: 0 0 14px; color: var(--muted); line-height: 1.6; }
+
+    .modalActions{ display:flex; gap: 10px; flex-wrap:wrap; }
+
+    .btn.secondary{
+
+      background: rgba(255,255,255,.06);
+
+      border: 1px solid rgba(255,255,255,.16);
+
+      color: rgba(255,255,255,.86);
+
+    }
+
+
+
+    /* Responsive */
+
+    @media (max-width: 940px){
+
+      .hero{ grid-template-columns: 1fr; }
+
+      nav ul{ display:none; }
+
+      .hamburger{ display:inline-flex; align-items:center; justify-content:center; }
+
+      .grid3{ grid-template-columns: 1fr; }
+
+    }
+
+
+
+    /* Reduced motion */
+
+    @media (prefers-reduced-motion: reduce){
+
+      * { transition: none !important; scroll-behavior: auto !important; }
+
+      .card:hover, .btn:hover { transform: none !important; }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <!-- Age Gate -->
+
+  <div class="modalBackdrop" id="ageGate" role="dialog" aria-modal="true" aria-label="Age verification">
+
+    <div class="modal">
+
+      <div class="pill" style="margin-bottom:10px;">
+
+        <span class="dot"></span> BattsRock — Responsible Enjoyment
+
+      </div>
+
+      <h3>Are you of legal drinking age in Costa Rica?</h3>
+
+      <p>
+
+        Please confirm you are of legal drinking age to view the BattsRock website.
+
+        Enjoy responsibly.
+
+      </p>
+
+      <div class="modalActions">
+
+        <button class="btn primary" id="btnYes" type="button">Yes, enter</button>
+
+        <a class="btn secondary" href="https://www.google.com" rel="noopener noreferrer">No, leave</a>
+
+      </div>
+
+      <p style="margin-top:14px; font-size:.9rem; color: rgba(255,255,255,.55);">
+
+        By entering, you agree to responsible consumption and local regulations.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <header>
+
+    <div class="container">
+
+      <div class="nav">
+
+        <a class="brand" href="#top" aria-label="BattsRock home">
+
+          <span class="logo" aria-hidden="true"></span>
+
+          <span>BattsRock</span>
+
+        </a>
+
+
+
+        <nav aria-label="Main navigation">
+
+          <ul>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#launch">Market Entry</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+          </ul>
+
+        </nav>
+
+
+
+        <div style="display:flex; align-items:center; gap:10px;">
+
+          <a class="btn" href="mailto:info@battsrock.com">Email</a>
+
+          <a class="btn primary" href="#contact">Get updates</a>
+
+          <button class="hamburger" id="menuBtn" aria-label="Open menu" type="button">☰</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- Mobile Menu -->
+
+  <div class="container" id="mobileMenu" style="display:none; padding-top:12px;">
+
+    <div class="card" style="padding:14px;">
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+
+        <a class="btn" href="#about">About</a>
+
+        <a class="btn" href="#launch">Market Entry</a>
+
+        <a class="btn" href="#contact">Contact</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <main id="top">
+
+    <div class="container">
+
+      <div class="hero">
+
+        <div>
+
+          <div class="pill">
+
+            <span class="dot"></span>
+
+            Rum Distribution • Costa Rica • Coming Soon
+
+          </div>
+
+
+
+          <h1>BattsRock is entering the Costa Rica market.</h1>
+
+          <p class="lead">
+
+            We’re preparing to distribute rum in Costa Rica. If you’re a bar, restaurant,
+
+            retailer, or potential partner, reach out to connect with our team.
+
+          </p>
+
+
+
+          <div class="heroActions">
+
+            <a class="btn primary" href="mailto:info@battsrock.com?subject=BattsRock%20Market%20Entry%20Inquiry">Contact us</a>
+
+            <a class="btn" href="#launch">What we’re building</a>
+
+          </div>
+
+
+
+          <div class="miniRow" aria-label="Highlights">
+
+            <span class="chip">Partnerships</span>
+
+            <span class="chip">Distribution planning</span>
+
+            <span class="chip">Onboarding venues</span>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="visual" aria-label="Coming soon card">
+
+          <div class="visualTop">
+
+            <div class="pill">
+
+              <span class="dot"></span>
+
+              BattsRock • Costa Rica
+
+            </div>
+
+
+
+            <div class="badge" title="Responsible enjoyment">
+
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+
+                <path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="2" />
+
+                <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+              </svg>
+
+              Enjoy responsibly
+
+            </div>
+
+          </div>
+
+
+
+          <div class="glassCard">
+
+            <h3>Coming soon</h3>
+
+            <p>
+
+              We’re currently building supply, logistics, and partnerships.
+
+              For wholesale, bar placement, and retail interest—email us to start the conversation.
+
+            </p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+
+              <span class="chip">Wholesale</span>
+
+              <span class="chip">Bars & Restaurants</span>
+
+              <span class="chip">Retail</span>
+
+            </div>
+
+          </div>
+
+
+
+          <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color: rgba(255,255,255,.70); font-size:.92rem;">
+
+            <span>Distribution-focused</span>
+
+            <span style="color: rgba(214,177,94,.95); font-weight:800;">Market Entry</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="sectionHead">
+
+          <div>
+
+            <h2>About BattsRock</h2>
+
+            <p class="subhead">
+
+              BattsRock is a distribution-led company preparing to introduce rum to the Costa Rica market.
+
+              We’re focused on responsible commercialization, strong partner relationships, and reliable service.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="grid3">
+
+          <div class="card">
+
+            <div class="icon" aria-hidden="true">🤝</div>
+
+            <h3>Partner-first</h3>
+
+            <p>We’re building relationships with venues and retailers who value quality, consistency, and service.</p>
+
+          </div>
+
+          <div class="card">
+
+            <div class="icon" aria-hidden="true">📦</div>
+
+            <h3>Logistics & supply</h3>
+
+            <p>We’re preparing procurement, storage, and delivery operations to support steady availability.</p>
+
+          </div>
+
+          <div class="card">
+
+            <div class="icon" aria-hidden="true">✅</div>
+
+            <h3>Responsible approach</h3>
+
+            <p>We promote legal-age consumption, compliance, and responsible enjoyment across all channels.</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="launch">
+
+      <div class="container">
+
+        <div class="sectionHead">
+
+          <div>
+
+            <h2>Market entry</h2>
+
+            <p class="subhead">
+
+              We are currently in the onboarding phase. If you want to be among the first partners,
+
+              we’d love to hear from you.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="grid3">
+
+          <div class="card">
+
+            <div class="icon" aria-hidden="true">🍸</div>
+
+            <h3>Bars & restaurants</h3>
+
+            <p>Menu placement discussions, staff support, and reliable delivery planning.</p>
+
+          </div>
+
+          <div class="card">
+
+            <div class="icon" aria-hidden="true">🏪</div>
+
+            <h3>Retail</h3>
+
+            <p>Early shelf opportunities, ordering processes, and promotional planning.</p>
+
+          </div>
+
+          <div class="card">
+
+            <div class="icon" aria-hidden="true">🚚</div>
+
+            <h3>Distribution partners</h3>
+
+            <p>Collaboration with local distributors and operators to scale reach and coverage.</p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="ctaBand" style="margin-top:18px;">
+
+          <div>
+
+            <h3>Interested in partnering?</h3>
+
+            <p>
+
+              Email us your business name and location (BattsRock • Costa Rica) and what type of partnership you’re exploring.
+
+            </p>
+
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+
+            <a class="btn primary" href="mailto:info@battsrock.com?subject=BattsRock%20Partnership%20Interest">Email partnerships</a>
+
+            <a class="btn" href="#contact">Contact details</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="sectionHead">
+
+          <div>
+
+            <h2>Contact</h2>
+
+            <p class="subhead">
+
+              For partnership interest, wholesale discussions, or general inquiries—reach us by email or phone.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card" style="padding:22px;">
+
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+
+            <div>
+
+              <div class="pill" style="margin-bottom:10px;">
+
+                <span class="dot"></span> BattsRock • Costa Rica
+
+              </div>
+
+
+
+              <!-- UPDATED: show number next to email -->
+
+              <h3 style="margin:0 0 6px;">
+
+                <a href="mailto:info@battsrock.com" style="text-decoration:none; border-bottom:1px solid rgba(255,255,255,.22);">
+
+                  info@battsrock.com
+
+                </a>
+
+                <span style="color: rgba(255,255,255,.55); font-weight:600; margin-left:10px;">
+
+                  +506 7006 7280
+
+                </span>
+
+              </h3>
+
+
+
+              <p style="margin:0; color: var(--muted); line-height:1.6;">
+
+                Send us a note and we’ll get back to you as soon as possible.
+
+              </p>
+
+              <p style="margin:12px 0 0; color: rgba(255,255,255,.55); font-size:.92rem; line-height:1.6;">
+
+                BattsRock, Costa Rica. Ready for suppliers.
+
+              </p>
+
+            </div>
+
+
+
+            <div style="display:flex; flex-direction:column; gap:10px; min-width: 240px;">
+
+              <a class="btn primary" href="mailto:info@battsrock.com?subject=BattsRock%20Inquiry">Email BattsRock</a>
+
+
+
+              <!-- UPDATED: call button under email button -->
+
+              <a class="btn" href="tel:+50670067280">Call +506 7006 7280</a>
+
+
+
+              <a class="btn" href="#launch">Partnership types</a>
+
+              <a class="btn" href="#about">About</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+  </main>
+
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footerRow">
+
+        <div>
+
+          <div style="display:flex; align-items:center; gap:.7rem;">
+
+            <span class="logo" aria-hidden="true" style="width:30px;height:30px;border-radius:12px;"></span>
+
+            <strong style="letter-spacing:.7px;">BattsRock</strong>
+
+          </div>
+
+          <p class="fine" style="margin-top:10px;">
+
+            © <span id="year"></span> BattsRock. Enjoy responsibly. Do not drink and drive.
+
+            Please follow Costa Rican laws and regulations regarding alcohol.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="footerLinks">
+
+          <a href="#top">Top</a>
+
+          <a href="mailto:info@battsrock.com">Email</a>
+
+          <a href="tel:+50670067280">Call</a>
+
+          <a href="#contact">Contact</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <script>
+
+    // Age gate (stores a local flag so users don't see it every visit)
+
+    const gate = document.getElementById('ageGate');
+
+    const btnYes = document.getElementById('btnYes');
+
+    const allowed = localStorage.getItem('battsrock_age_ok');
+
+
+
+    if (allowed === '1') {
+
+      gate.style.display = 'none';
+
+    }
+
+
+
+    btnYes.addEventListener('click', () => {
+
+      localStorage.setItem('battsrock_age_ok', '1');
+
+      gate.style.display = 'none';
+
+    });
+
+
+
+    // Simple mobile menu toggle
+
+    const menuBtn = document.getElementById('menuBtn');
+
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    let open = false;
+
+
+
+    menuBtn.addEventListener('click', () => {
+
+      open = !open;
+
+      mobileMenu.style.display = open ? 'block' : 'none';
+
+      menuBtn.textContent = open ? '✕' : '☰';
+
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+
+    });
+
+
+
+    // Footer year
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+
+  </html>
