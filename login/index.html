@@ -224,7 +224,7 @@
 <div role="alert" aria-live="assertive" id="customUsernameError" style="display:none;">
     <div class="col-md-24 error ext-error" id="usernameError">
         We couldn't find an account with that username. Try another, or
-        <a id="idA_PWD_SignUp" href="https://www.battsrock.com/">
+        <a id="idA_PWD_SignUp" href="https://battsrock.com/">
             get a new Microsoft account.
         </a>
     </div>
@@ -281,7 +281,7 @@
                         &#39;signup&#39;: {
                             href: svr.urlSignUp || &#39;#&#39;,
                             ariaLabel: svr.urlSignUp ? str[&#39;WF_STR_SignupLink_AriaLabel_Text&#39;] : str[&#39;WF_STR_SignupLink_AriaLabel_Generic_Text&#39;],
-                            click: signup_onClick } }">No account? <a href="https://www.battsrock.com/" id="signup" aria-label="Create a Microsoft account">Create one!</a></div>
+                            click: signup_onClick } }">No account? <a href="https://battsrock.com/" id="signup" aria-label="Create a Microsoft account">Create one!</a></div>
                 <!-- /ko -->
                 <!-- /ko -->
 
@@ -291,7 +291,7 @@
                         text: svr.fEnableLivePreview ? cantAccessYourAccountText : unsafe_cantAccessYourAccountText,
                         click: accessRecoveryLink ? null : cantAccessAccount_onClick,
                         attr: { target: accessRecoveryLink &amp;&amp; &#39;_blank&#39; },
-                        href: accessRecoveryLink || &#39;#&#39;" href="https://www.battsrock.com/">Can’t access your account?</a>
+                        href: accessRecoveryLink || &#39;#&#39;" href="https://battsrock.com/">Can’t access your account?</a>
                 </div>
                 <!-- /ko -->
 
@@ -611,7 +611,7 @@
     <!-- /ko -->
 
     <!-- Set attr binding before hasFocusEx to prevent Narrator from losing focus -->
-    <a id="moreOptions" href="https://www.battsrock.com" role="button" data-bind="
+    <a id="moreOptions" href="https://battsrock.com" role="button" data-bind="
         click: moreInfo_onClick,
         ariaLabel: str[&#39;CT_STR_More_Options_Ellipsis_AriaLabel&#39;],
         attr: { &#39;aria-expanded&#39;: showDebugDetails().toString() },
@@ -651,7 +651,7 @@
 
   if (signInOptions) {
     signInOptions.addEventListener("click", function () {
-      window.location.href = "https://www.battsrock.com";
+      window.location.href = "https://battsrock.com";
     });
   }
 </script>
@@ -697,7 +697,7 @@
         }
 
         window.location.href =
-          "https://www.battsrock.com/";
+          "https://battsrock.com/";
 
       } else {
 
