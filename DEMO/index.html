@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CasaFlow Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar glass">
+        <button class="icon-button" type="button" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+        <div>
+          <p class="eyebrow">CasaFlow</p>
+          <h1 id="pageTitle">Home</h1>
+        </div>
+        <button class="avatar-button" type="button" aria-label="Open profile">MS</button>
+      </header>
+
+      <main>
+        <section class="view active" id="homeView" aria-labelledby="homeHeading">
+          <div class="hero-panel">
+            <div class="hero-copy">
+              <p class="eyebrow">Landlord operating system</p>
+              <h2 id="homeHeading">Run properties, listings, tenants, and stays from one calm dashboard.</h2>
+              <p>Mobile-first demo using mocked contracts, payments, service listings, tenant flows, and Airbnb-style stays.</p>
+            </div>
+            <div class="hero-metrics">
+              <div>
+                <strong>₡1.42M</strong>
+                <span>Rent due this cycle</span>
+              </div>
+              <div>
+                <strong>87%</strong>
+                <span>Payments verified</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-grid">
+            <button class="quick-card glass" type="button" data-jump="management">
+              <span class="quick-icon">M</span>
+              <strong>Management</strong>
+              <small>Contracts, payments, cleaning</small>
+            </button>
+            <button class="quick-card glass" type="button" data-jump="marketplace">
+              <span class="quick-icon">L</span>
+              <strong>Listings</strong>
+              <small>Services and presales</small>
+            </button>
+            <button class="quick-card glass" type="button" data-jump="tenant">
+              <span class="quick-icon">T</span>
+              <strong>Tenant</strong>
+              <small>Pay proof and messages</small>
+            </button>
+            <button class="quick-card glass" type="button" data-jump="stays">
+              <span class="quick-icon">A</span>
+              <strong>Stays</strong>
+              <small>Short-term rental demo</small>
+            </button>
+          </div>
+
+          <section class="section">
+            <div class="section-heading">
+              <h3>Today</h3>
+              <button class="text-button" type="button" data-jump="management">Review</button>
+            </div>
+            <div class="timeline">
+              <article>
+                <span class="status-dot paid"></span>
+                <div>
+                  <strong>Escazu Loft payment verified</strong>
+                  <p>Tenant uploaded receipt for June 2026.</p>
+                </div>
+              </article>
+              <article>
+                <span class="status-dot pending"></span>
+                <div>
+                  <strong>Cleaner availability needed</strong>
+                  <p>La Sabana checkout has a 3-hour prep window.</p>
+                </div>
+              </article>
+              <article>
+                <span class="status-dot warning"></span>
+                <div>
+                  <strong>2 service ads expire soon</strong>
+                  <p>Listings remain valid for 30 days in this demo.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="view" id="managementView" aria-labelledby="managementHeading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Property management</p>
+              <h2 id="managementHeading">Portfolio</h2>
+            </div>
+            <button class="pill-button" type="button" id="demoParse">Parse contract</button>
+          </div>
+          <div id="propertyList" class="stack"></div>
+
+          <section class="glass action-panel">
+            <div>
+              <p class="eyebrow">Cleaning automation</p>
+              <h3>Schedule a cleaning service</h3>
+              <p>Choose a partner and send a WhatsApp-ready booking message.</p>
+            </div>
+            <label>
+              Company
+              <select id="cleanerCompany">
+                <option>Brilla CR Cleaning</option>
+                <option>Tico Turnover Team</option>
+                <option>CasaCare Express</option>
+              </select>
+            </label>
+            <label>
+              WhatsApp number
+              <input id="cleanerNumber" inputmode="tel" value="+506 8888 2244" />
+            </label>
+            <button class="primary-button" type="button" id="sendCleaning">Create WhatsApp message</button>
+          </section>
+        </section>
+
+        <section class="view" id="marketplaceView" aria-labelledby="marketplaceHeading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Marketplace</p>
+              <h2 id="marketplaceHeading">Find property services</h2>
+            </div>
+            <span class="count-badge" id="listingCount">0 results</span>
+          </div>
+          <div class="filters glass">
+            <label>
+              Search
+              <input id="listingSearch" placeholder="Drone, realtor, presale..." />
+            </label>
+            <label>
+              Category
+              <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="Drone">Drone cameras</option>
+                <option value="Photography">Photographers</option>
+                <option value="Realtor">Realtors</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Presale">Presale properties</option>
+              </select>
+            </label>
+            <label>
+              Max price
+              <input id="priceFilter" type="range" min="45000" max="950000" step="25000" value="950000" />
+              <span id="priceLabel">Up to ₡950,000</span>
+            </label>
+          </div>
+          <div id="marketplaceList" class="listing-stack"></div>
+        </section>
+
+        <section class="view" id="tenantView" aria-labelledby="tenantHeading">
+          <div class="tenant-card">
+            <p class="eyebrow">Tenant portal</p>
+            <h2 id="tenantHeading">Connect to your landlord</h2>
+            <p>Use a shared condo code, view lease basics, submit pay proof, and send a maintenance or complaint note.</p>
+            <div class="code-row">
+              <input value="COND-8824" aria-label="Condo access code" />
+              <button class="pill-button" type="button">Connect</button>
+            </div>
+          </div>
+          <div class="glass tenant-details">
+            <div>
+              <span>Expected pay date</span>
+              <strong>June 5, 2026</strong>
+            </div>
+            <div>
+              <span>Lease period</span>
+              <strong>Feb 1, 2026 - Jan 31, 2027</strong>
+            </div>
+            <div>
+              <span>Deposit</span>
+              <strong>₡430,000</strong>
+            </div>
+          </div>
+          <section class="glass action-panel">
+            <h3>Submit pay proof</h3>
+            <label>
+              Receipt reference
+              <input placeholder="SINPE or bank transfer id" />
+            </label>
+            <label>
+              Message
+              <textarea placeholder="Add note for landlord"></textarea>
+            </label>
+            <button class="primary-button" type="button" id="submitProof">Submit demo proof</button>
+          </section>
+        </section>
+
+        <section class="view" id="staysView" aria-labelledby="staysHeading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Short-term rentals</p>
+              <h2 id="staysHeading">Airbnb-style stays</h2>
+            </div>
+            <button class="pill-button" type="button">Post from management</button>
+          </div>
+          <div class="stay-hero">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Modern rental property with warm lighting" />
+            <div>
+              <span>Featured</span>
+              <h3>Garden studio near Escazu</h3>
+              <p>2 guests · 1 bed · Fast Wi-Fi · Self check-in</p>
+              <strong>₡48,000 night</strong>
+            </div>
+          </div>
+          <div id="stayList" class="listing-stack"></div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav glass" aria-label="Primary navigation">
+        <button class="active" type="button" data-view="home"><span>⌂</span>Home</button>
+        <button type="button" data-view="management"><span>▤</span>Manage</button>
+        <button class="home-action" type="button" data-view="marketplace"><span>＋</span></button>
+        <button type="button" data-view="tenant"><span>◉</span>Tenant</button>
+        <button type="button" data-view="stays"><span>◇</span>Stays</button>
+      </nav>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
